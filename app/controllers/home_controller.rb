@@ -22,6 +22,6 @@ class HomeController < ApplicationController
     else
       ""
     end
-    render json: result
+    render json: {val: val, result: result}
   end
 end
