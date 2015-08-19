@@ -4,6 +4,12 @@ class HomeController < ApplicationController
   end
 
   def check
+    #binding.pry
+    if params[:val].blank? or params[:val].to_i == 0
+      render plain: "404 Not Found", status: 404
+      return
+    end
+
     val = params[:val].to_i
 
     result = case
