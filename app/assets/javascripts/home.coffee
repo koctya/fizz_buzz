@@ -3,4 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $('#results').append "hello Fizz"
+  for x in [1..100]
+
+    $.post "/home/check", {val: x}, (data) ->
+      $('#results').append "<li> #{x}  - #{data} </li>"
