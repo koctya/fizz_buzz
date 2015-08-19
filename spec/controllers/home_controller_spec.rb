@@ -12,23 +12,23 @@ RSpec.describe HomeController, type: :controller do
   describe "POST #check" do
     it "returns empty string" do
       post :check, val: 1
-      expect(response.body).to eql ""
+      expect(response.body).to include ""
     end
 
     context "with valid attributes" do
       it "returns Fizz" do
         post :check, val: 3
-        expect(response.body).to eql 'Fizz'
+        expect(response.body).to include 'Fizz'
       end
 
       it "returns Buzz" do
         post :check, val: 5
-        expect(response.body).to eql 'Buzz'
+        expect(response.body).to include 'Buzz'
       end
 
       it "returns FizzBuzz" do
         post :check, val: 15
-        expect(response.body).to eql 'FizzBuzz'
+        expect(response.body).to include 'FizzBuzz'
       end
 
     end
