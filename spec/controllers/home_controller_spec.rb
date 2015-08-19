@@ -39,10 +39,17 @@ RSpec.describe HomeController, type: :controller do
         post :check, val: 0.234
         expect(response.status).to eq(404)
       end
+
       it 'should return 404' do
         post :check, val: ''
         expect(response.status).to eq(404)
       end
+
+      it 'should return 404' do
+        post :check, val: 'five'
+        expect(response.status).to eq(404)
+      end
+
     end
   end
 
